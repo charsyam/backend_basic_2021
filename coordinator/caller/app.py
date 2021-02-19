@@ -24,6 +24,7 @@ def my_func(children):
     nodes = []
     for child in children:
         data, stat = zk.get(f"{ZK_PATH}{child}")
+        print("child: ", child, " ", data.decode("utf-8"))
         nodes.append(data.decode("utf-8"))
 
     global current_nodes
